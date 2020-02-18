@@ -4,7 +4,10 @@ Install Jenkins on DebianUbuntu Instance
 
 2. Check the openjdk-8-jdk insgall or not
 	java -version
-	if it is not insalled $ sudo apt install openjdk-8-jdk -y
+	if it is not insalled    $ sudo apt install openjdk-8-jdk -y
+	if already installed then update it 
+		$ update-alternatives --config java (select 1.8 and above)
+		$ update-alternatives --config javac(select 1.8 and above)
 
 3. Now open official Jenkins website pkg.jenkins.io
      --> select debian-stable 
