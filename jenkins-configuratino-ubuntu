@@ -1,6 +1,6 @@
 Install Jenkins on DebianUbuntu Instance
 ========================================
-1. Connect the Instance
+1. Connect to the Jenkins Instance
 
 2. Check the openjdk-8-jdk insgall or not
 	java -version
