@@ -1,0 +1,31 @@
+Proxy (squid) installation in RHEL/CentOS - 7
+=============================================
+If you want to do configure the Proxy server we need two NIC cards (like eth0, eth1).
+once Nic card for local connection and another one is internet connection.
+give IP address for One Nic card and another one is for internet.
+Go to settings and add NIC card and select NAT instance.
+
+
+1. check IP address #ifconfig
+
+2. install squid package and start the service 
+	#yum install squid*
+	#systemctl start squid
+	#systemctl enable squid
+	#systemctl status squid
+
+3. firewall setting
+	#systemctl start firewalld
+	#systemctl enable firewalld
+	#firewall-cmd --permanent --add-port=3128/tcp	(add port)
+	#firewall-cmd --reload
+
+4. Goto /etc/squid/squid.conf file 
+	#vi /etc/squid/squid.conf
+	acl localhost src 192.168.1.100/24  #allow local network
+	http_access allow localhost
+
+Client server side
+==================
+
+open browser and go to preference 
